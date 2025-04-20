@@ -10,8 +10,12 @@ public class Main {
         Stack<Integer> stack = new Stack<>();
         int N = Integer.parseInt(br.readLine());
         for (int i = 0; i < N; i++) {
-            String input = br.readLine();
-            switch (input) {
+            String[] input = br.readLine().split(" ");
+            switch (input[0]) {
+                case "push":
+                    int num = Integer.parseInt(input[1]);
+                    stack.push(num);
+                    break;
                 case "pop":
                     if (stack.isEmpty()) {
                         System.out.println(-1);
@@ -36,9 +40,6 @@ public class Main {
                     }
                     System.out.println(stack.peek());
                     break;
-                default:
-                    int num = Integer.parseInt(input.split(" ")[1]);
-                    stack.push(num);
             }
         }
     }
